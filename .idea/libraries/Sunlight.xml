@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Sunlight">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/hearUs/libs/Sunlight.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

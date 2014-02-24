@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="contact_email"></string>
+	<string name="contact_subject"></string>
+
+	<string name="mapbox_id"></string>
+
+	<string name="sunlight_api_key">d9836e25aa044e26bf6008212dab2514</string>
+	<string name="api_user_agent">CHANGEME</string>
+	<string name="api_endpoint">https://congress.api.sunlightfoundation.com</string>
+
+	<!-- usually "market", can be changed for non-market distributions -->
+	<string name="distribution_channel"></string>
+
+	<!-- must be either "google" or "amazon" -->
+	<string name="market_channel"></string>
+
+</resources>
