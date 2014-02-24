@@ -16,7 +16,7 @@ public abstract class SingleActivity extends Activity {
 		Fragment fragment = fm.findFragmentById(R.id.container);
 
 		if (fragment == null) {
-			fragment = new IssueSearchFragment();
+			fragment = createFragment();
 			fm.beginTransaction()
 					.add(R.id.container, fragment)
 					.commit();

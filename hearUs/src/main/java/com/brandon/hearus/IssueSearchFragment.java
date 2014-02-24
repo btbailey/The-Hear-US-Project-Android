@@ -53,7 +53,7 @@ public class IssueSearchFragment extends Fragment {
 		});
 
 		mSearchIssueButton = (Button) v.findViewById(R.id.issue_search_button);
-		mSearchIssueButton.setOnClickListener(new View.OnClickListener() {
+			mSearchIssueButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent (getActivity(), BillListActivity.class);
