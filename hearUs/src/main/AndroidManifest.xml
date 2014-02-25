@@ -16,8 +16,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BillListActivity"
+            android:name="com.brandon.hearus.BillListActivity"
             android:label="@string/bill_list_activity" >
+        </activity>
+        <activity
+            android:name="com.brandon.hearus.BillActivity"
+            android:label="@string/title_activity_bill" >
         </activity>
     </application>
 

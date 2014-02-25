@@ -13,11 +13,13 @@ public class Bill {
 	private UUID mId;
 	private String mBillName;
 	private Date mBillDate;
+	private String mBillDescription;
 
 	public Bill(String billName) {
 		mBillName = billName;
 		mBillDate = new Date();
 		mId = UUID.randomUUID();
+		mBillDescription  = "This is Bill #" + getId() + " like it";
 	}
 
 	public UUID getId() {
@@ -35,6 +37,10 @@ public class Bill {
 	public CharSequence formatDate() {
 		CharSequence s = DateFormat.format("EEEE, MMM, dd, yyyy", getBillDate());
 		return s;
+	}
+
+	public String getBillDescription() {
+		return mBillDescription;
 	}
 
 }
