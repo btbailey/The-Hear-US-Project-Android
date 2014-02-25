@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.brandon.hearus" >
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,6 +24,10 @@
         <activity
             android:name="com.brandon.hearus.BillActivity"
             android:label="@string/title_activity_bill" >
+        </activity>
+        <activity
+            android:name="com.brandon.hearus.LocationActivity"
+            android:label="@string/title_activity_location" >
         </activity>
     </application>
 

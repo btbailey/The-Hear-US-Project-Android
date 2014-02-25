@@ -17,5 +17,6 @@
     <string name="bill_description">Crime Gun Tracing Act of 2013 - Amends the Omnibus Crime Control and Safe Streets Act of 1968 to direct the Attorney General, in awarding public safety and community policing (COPS ON THE BEAT) grants, to give preferential consideration to an applicant that has reported all firearms recovered during the previous 12 months at a crime scene or during the course of a criminal investigation to the Bureau of Alcohol, Tobacco, Firearms, and Explosives (ATF), or to a state agency that reports such firearms to the Bureau, for the purpose of tracing.</string>
     <string name="bill_sponsor">Sen. Richard Durbin [D-IL]</string>
     <string name="title_activity_bill">BillActivity</string>
+    <string name="title_activity_location">LocationActivity</string>
 
 </resources>
