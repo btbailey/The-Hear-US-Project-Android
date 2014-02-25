@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by brandon.bailey on 2/19/14.
@@ -35,6 +36,14 @@ public class BillHelper {
 		}
 		Log.d(LOGGING_TAG, "Inside #getBills");
 		return mBills;
+	}
+
+	public Bill getBill(UUID id) {
+		for (Bill b : mBills) {
+			if (b.getId().equals(id))
+				return b;
+		}
+		return null;
 	}
 
 	public void searchForBills(String issue) {

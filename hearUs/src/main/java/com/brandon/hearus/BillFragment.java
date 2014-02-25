@@ -10,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class BillFragment extends Fragment {
+import java.util.UUID;
 
+public class BillFragment extends Fragment {
 	private static String LOGGING_TAG = BillFragment.class.getSimpleName();
+	public static final String EXTRA_BILL_ID = "com.brandon.android.hearus.bill_id";
+
+	private Bill mBill;
 
 	private Button mButtonSupport;
 	private Button mButtonOppose;
@@ -21,6 +25,34 @@ public class BillFragment extends Fragment {
     public BillFragment() {
         // Required empty public constructor
     }
+
+	public static BillFragment newInstace(UUID billID) {
+		Bundle args = new Bundle();
+		args.putSerializable(EXTRA_BILL_ID, billID);
+
+		BillFragment fragment = new BillFragment();
+		fragment.setArguments(args);
+
+		return fragment;
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(EXTRA_BILL_ID);
+
+		mBill = BillHelper.getInstance(getActivity()).getBill(crimeId);
+
+		if (mBill == null) {
+			Log.d(LOGGING_TAG, "Bill not found in BillHelper#getBill");
+		} else {
+			Log.d(LOGGING_TAG, "Bill has been foung in BillHelper#getBill");
+		}
+
+		Log.d(LOGGING_TAG, "Bill id is " + crimeId);
+
+	}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

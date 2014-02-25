@@ -53,8 +53,10 @@ public class BillListFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		Bill b = ((BillAdapter) getListAdapter()).getItem(position);
-		Log.d(LOGGING_TAG, b.getBillName() + " was clicked");
+		Log.d(LOGGING_TAG, b.getBillName() + " was clicked, BillListFragment#onListItemClick");
 		Intent i = new Intent(getActivity(), BillActivity.class);
+		i.putExtra(BillFragment.EXTRA_BILL_ID, b.getId());
+		Log.d(LOGGING_TAG, b.getId() + " is the bills id, BillListFragment#onListItemClick");
 		startActivity(i);
 	}
 
