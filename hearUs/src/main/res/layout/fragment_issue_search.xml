@@ -2,47 +2,47 @@
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
 
-<LinearLayout
-			  android:id="@+id/issue_search_text_area"
-			  android:layout_width="match_parent"
-			  android:layout_height="wrap_content"
-			  android:orientation="horizontal">
-
-	<EditText
-		android:id="@+id/issue_search_text"
+	<LinearLayout
+		android:id="@+id/issue_search_text_area"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:hint="Search for Issue"/>
+		android:orientation="horizontal">
 
-	<Button
-		android:id="@+id/issue_search_button"
-		android:layout_width="80dp"
-		android:layout_height="wrap_content"
-		android:text="Find Bills"
-		android:layout_weight="0"
-		/>
+		<EditText
+			android:id="@+id/issue_search_text"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:hint="Search for Issue"/>
 
-</LinearLayout>
+		<Button
+			android:id="@+id/issue_search_button"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="Find Bills"
+			android:layout_weight="1"
+			/>
+
+	</LinearLayout>
 
 	<LinearLayout
 		android:layout_below="@+id/issue_search_text_area"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		>
+		android:orientation="horizontal">
+
 		<EditText
-			android:layout_width="match_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:hint="Enter Zip Code or Geo Locate"
-			android:layout_weight="1"/>
+			android:layout_weight="2"/>
 
 		<Button
-			android:layout_width="80dp"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:text="Locate"
-			android:layout_weight="0"/>
+			android:layout_weight="1"/>
 
-		</LinearLayout>
+	</LinearLayout>
 
 </RelativeLayout>
