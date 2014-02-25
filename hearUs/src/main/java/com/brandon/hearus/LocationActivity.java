@@ -1,5 +1,6 @@
 package com.brandon.hearus;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,9 +13,9 @@ public class LocationActivity extends SingleActivity {
         setContentView(R.layout.activity_location);
     }
 
-	protected LocationFragment createFragment() {
+	protected Fragment createFragment() {
 		Log.d(LOGGING_TAG, "BillListActivity createFragment reached");
-		return new LocationFragment();
+		//return new LocationFragment();
+		return null;
 	}
-
 }

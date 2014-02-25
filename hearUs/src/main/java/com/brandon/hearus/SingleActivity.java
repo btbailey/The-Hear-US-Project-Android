@@ -6,7 +6,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 
 public abstract class SingleActivity extends Activity {
-	protected abstract LocationFragment createFragment();
+	protected abstract Fragment createFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
