@@ -26,18 +26,21 @@
 	</LinearLayout>
 
 	<LinearLayout
-		android:layout_below="@+id/issue_search_text_area"
+		android:id="@+id/district_search_text_area"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_below="@id/issue_search_text_area"
 		android:orientation="horizontal">
 
 		<EditText
+			android:id="@+id/district_search_text"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:hint="Enter Zip Code or Geo Locate"
 			android:layout_weight="2"/>
 
 		<Button
+			android:id="@+id/district_search_button"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:text="Locate"

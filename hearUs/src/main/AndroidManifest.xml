@@ -3,6 +3,7 @@
     package="com.brandon.hearus" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,10 @@
         <activity
             android:name="com.brandon.hearus.LocationActivity"
             android:label="@string/title_activity_location" >
+        </activity>
+        <activity
+            android:name="com.brandon.hearus.DistrictActivity"
+            android:label="@string/title_activity_district" >
         </activity>
     </application>
 

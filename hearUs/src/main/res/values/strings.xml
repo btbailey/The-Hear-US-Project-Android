@@ -18,5 +18,6 @@
     <string name="bill_sponsor">Sen. Richard Durbin [D-IL]</string>
     <string name="title_activity_bill">BillActivity</string>
     <string name="title_activity_location">LocationActivity</string>
+    <string name="title_activity_district">DistrictActivity</string>
 
 </resources>

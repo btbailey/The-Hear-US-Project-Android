@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java-sunlightapi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/hearUs/libs/java_sunlightapi_jar/java-sunlightapi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
