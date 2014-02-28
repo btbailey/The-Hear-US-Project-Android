@@ -18,6 +18,7 @@ public class LocationFragment extends Fragment {
 	private static String LOGGING_TAG = LocationFragment.class.getSimpleName();
 	private JSONArray districts;
 	private JSONArray legislators;
+	private JSONArray bills;
 
     public LocationFragment() {
         // Required empty public constructor
@@ -28,8 +29,10 @@ public class LocationFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
 	  	CongressService congressService	= CongressService.getInstance();
+
 		districts = congressService.getDistrictsInZip();
 		legislators = congressService.getLegislatorsInZip();
+		bills = congressService.getBills();
 
 	}
 

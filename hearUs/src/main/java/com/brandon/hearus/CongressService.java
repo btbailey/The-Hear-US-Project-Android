@@ -24,11 +24,11 @@ public class CongressService {
 	}
 
 	public JSONArray getDistrictsInZip() {
-		final JSONArray[] districts = {null};
+		final JSONArray[] districts = new JSONArray[1];
 		SunlightRestClient.get("districts/locate?zip=20744", new JsonHttpResponseHandler(){
 			@Override
 			public void onStart(){
-				Log.d(LOGGING_TAG, "AsyncTask started");
+				Log.d(LOGGING_TAG, "AsyncTask started for #getDistrictsInZip");
 			}
 
 			@Override
@@ -37,6 +37,7 @@ public class CongressService {
 //					districts[0] = (JSONArray) response.get("results");
 					JSONArray dis;
 					dis = (JSONArray) response.get("results");
+					districts[0] = dis;
 					Log.d(LOGGING_TAG, "successfully got districts \n" + dis);
 				} catch (JSONException e) {
 					Log.d(LOGGING_TAG, "catch block");
@@ -55,7 +56,7 @@ public class CongressService {
 			@Override
 			public void onStart(){
 
-				Log.d(LOGGING_TAG, "AsyncTask started");
+				Log.d(LOGGING_TAG, "AsyncTask started for #getLegislatorsInZip");
 			}
 
 			@Override
@@ -74,5 +75,34 @@ public class CongressService {
 			}
 		});
 		return legislators[0];
+	}
+
+	public JSONArray getBills() {
+		final JSONArray[] allBills = {null};
+		SunlightRestClient.get(
+				"bills/search?query=gun%20control&fields=bill_id,bill_type,chamber,popular_title,short_title,official_title,urls,history,last_action,sponsor_id,related_bill_ids,nicknames,keywords,summary,summary_short",
+				new JsonHttpResponseHandler(){
+			@Override
+			public void onStart(){
+
+				Log.d(LOGGING_TAG, "AsyncTask started for #getBills");
+			}
+
+			@Override
+			public void onSuccess(JSONObject response){
+				try {
+//					legislators[0] = (JSONArray) response.get("results");
+					JSONArray bills;
+					bills = (JSONArray) response.get("results");
+					Log.d(LOGGING_TAG, "successfully got bills \n " + bills);
+				} catch (JSONException e) {
+					Log.d(LOGGING_TAG, "catch block");
+					e.printStackTrace();
+				}
+
+				Log.d(LOGGING_TAG, "");
+			}
+		});
+		return allBills[0];
 	}
 }

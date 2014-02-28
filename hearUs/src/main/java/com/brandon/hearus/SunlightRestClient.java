@@ -7,8 +7,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class SunlightRestClient {
 	private static final String LOGGING_TAG = SunlightRestClient.class.getSimpleName();
-	//private static final String BASE_URL = "https://congress.api.sunlightfoundation.com/%API_CALL%?apikey=%API_KEY%";
 	private static final String BASE_URL = "https://congress.api.sunlightfoundation.com/%API_CALL%&apikey=%API_KEY%";
+//	private static final String URL = R.string.api_endpoint;
 
 	private static AsyncHttpClient client = new AsyncHttpClient();
 
