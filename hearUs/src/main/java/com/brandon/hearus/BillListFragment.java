@@ -84,7 +84,7 @@ public class BillListFragment extends ListFragment {
 			titleTextView.setText(b.getBillName());
 
 			TextView dateTextView = (TextView) convertView.findViewById(R.id.bill_list_itemDateTextView);
-			dateTextView.setText(b.formatDate());
+//			dateTextView.setText(b.formatDate());
 
 			return convertView;
 		}

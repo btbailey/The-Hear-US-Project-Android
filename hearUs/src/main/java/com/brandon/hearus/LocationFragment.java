@@ -1,12 +1,17 @@
 package com.brandon.hearus;
 
 import android.app.Fragment;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,13 +21,27 @@ import org.json.JSONArray;
 public class LocationFragment extends Fragment {
 
 	private static String LOGGING_TAG = LocationFragment.class.getSimpleName();
+	public static final String EXTRA_ZIP_CODE = "com.brandon.android.hearus.zip_code";
+
 	private JSONArray districts;
+	private Resources mResources;
+	int mResourceId;
 	private JSONArray legislators;
-	private JSONArray bills;
+	private List<Bill> bills = new ArrayList<Bill>();
 
     public LocationFragment() {
         // Required empty public constructor
     }
+
+	public static LocationFragment newInstance(String zipCode) {
+		Bundle args = new Bundle();
+		args.putSerializable(EXTRA_ZIP_CODE, zipCode);
+
+		LocationFragment fragment = new LocationFragment();
+		fragment.setArguments(args);
+
+		return fragment;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,9 +49,35 @@ public class LocationFragment extends Fragment {
 		setRetainInstance(true);
 	  	CongressService congressService	= CongressService.getInstance();
 
+		String zipCode = (String) getActivity().getIntent().getSerializableExtra(EXTRA_ZIP_CODE);
+		Log.d(LOGGING_TAG, "the entered zip code is: "+ zipCode);
+
 		districts = congressService.getDistrictsInZip();
-		legislators = congressService.getLegislatorsInZip();
-		bills = congressService.getBills();
+		bills = congressService.getBillsList();
+		legislators = congressService.getLegislatorsInZip(zipCode);
+//		 mResourceId = R.raw.zipcode_response;
+
+//		InputStream inStream = mResources.openRawResource(mResourceId);
+//		byte[] bytes = new byte[0];
+//		try {
+//
+//			bytes = new byte[inStream.available()];
+//			int offset = 0;
+//			while (offset < bytes.length) {
+//				int numRead = inStream.read(bytes, offset, bytes.length - offset);
+//				if (numRead >= 0)
+//					offset += numRead;
+//				else
+//					break;
+//			}
+//			inStream.close();
+//			String template = new String(bytes);
+//			Log.d(LOGGING_TAG, "LocationFragment congressmen response: \n" + template);
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+
 
 	}
 

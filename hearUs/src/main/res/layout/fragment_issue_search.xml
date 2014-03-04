@@ -36,7 +36,7 @@
 			android:id="@+id/district_search_text"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:hint="Enter Zip Code or Geo Locate"
+			android:hint="Enter Zip Code"
 			android:layout_weight="2"/>
 
 		<Button

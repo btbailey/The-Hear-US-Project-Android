@@ -26,7 +26,7 @@ public class BillFragment extends Fragment {
         // Required empty public constructor
     }
 
-	public static BillFragment newInstace(UUID billID) {
+	public static BillFragment newInstance(UUID billID) {
 		Bundle args = new Bundle();
 		args.putSerializable(EXTRA_BILL_ID, billID);
 

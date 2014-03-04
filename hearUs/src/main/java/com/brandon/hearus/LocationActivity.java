@@ -8,6 +8,6 @@ public class LocationActivity extends SingleActivity {
 
 	@Override
 	protected Fragment createFragment() {
-		return new BillListFragment();
+		return new LocationFragment();
 	}
 }

@@ -1,26 +1,31 @@
 package com.brandon.hearus;
 
-import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.os.Bundle;
 
-public class DistrictActivity extends Activity {
+public class DistrictActivity extends SingleActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_district);
+	@Override
+	protected Fragment createFragment() {
 
-		FragmentManager fm = getFragmentManager();
-		Fragment fragment = fm.findFragmentById(R.id.container);
+		String zipCode = (String) getIntent().getSerializableExtra(LocationFragment.EXTRA_ZIP_CODE);
 
-		if (fragment == null) {
-			fragment = new LocationFragment();
-			fm.beginTransaction()
-					.add(R.id.container, fragment)
-					.commit();
-		}
-    }
+		return LocationFragment.newInstance(zipCode);
+	}
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_district);
+//
+//		FragmentManager fm = getFragmentManager();
+//		Fragment fragment = fm.findFragmentById(R.id.container);
+//
+//		if (fragment == null) {
+//			fragment = new LocationFragment();
+//			fm.beginTransaction()
+//					.add(R.id.container, fragment)
+//					.commit();
+//		}
+//    }
 
 }

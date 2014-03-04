@@ -31,7 +31,7 @@ public class BillHelper {
 	public ArrayList<Bill> getBills() {
 		mBills = new ArrayList<Bill>();
 		for (int i = 0; i < 30; i++) {
-			Bill b = new Bill(String.format("Bill #%d", i));
+			Bill b = new Bill();
 			mBills.add(b);
 		}
 		Log.d(LOGGING_TAG, "Inside #getBills");

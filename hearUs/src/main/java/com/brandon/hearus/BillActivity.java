@@ -14,6 +14,6 @@ public class BillActivity extends SingleActivity {
 
 		UUID billId = (UUID) getIntent().getSerializableExtra(BillFragment.EXTRA_BILL_ID);
 
-		return BillFragment.newInstace(billId);
+		return BillFragment.newInstance(billId);
 	}
 }
