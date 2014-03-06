@@ -18,7 +18,7 @@ import java.util.List;
  * A simple {@link android.support.v4.app.Fragment} subclass.
  *
  */
-public class LocationFragment extends Fragment {
+public class LocationFragment extends Fragment implements ServiceHandler{
 
 	private static String LOGGING_TAG = LocationFragment.class.getSimpleName();
 	public static final String EXTRA_ZIP_CODE = "com.brandon.android.hearus.zip_code";
@@ -53,7 +53,7 @@ public class LocationFragment extends Fragment {
 		Log.d(LOGGING_TAG, "the entered zip code is: "+ zipCode);
 
 		districts = congressService.getDistrictsInZip();
-		bills = congressService.getBillsList();
+		congressService.getBills(this);
 		legislators = congressService.getLegislatorsInZip(zipCode);
 //		 mResourceId = R.raw.zipcode_response;
 
@@ -88,6 +88,11 @@ public class LocationFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_location, container, false);
     }
+
+	@Override
+	public void onSuccess(Object data) {
+		bills = (List<Bill>)data;
+	}
 
 //	private District findDistrictsInZipCode(String zipCode) {
 //		District[] districts = District.getDistrictsForZipCode();

@@ -111,7 +111,7 @@ public class CongressService {
 		return legislator[0];
 	}
 
-	public void getBills() {
+	public void getBills(final ServiceHandler handler) {
 
 		final JSONArray[] bills = {new JSONArray()};
 		SunlightRestClient.get(
@@ -144,12 +144,14 @@ public class CongressService {
 						e.printStackTrace();
 					}
 				}
+				handler.onSuccess(mBillsList);
 			}
+
 		});
 	}
 
-	public List<Bill> getBillsList() {
-		getBills();
-		return mBillsList;
-	}
+//	public List<Bill> getBillsList() {
+//		getBills();
+//		return mBillsList;
+//	}
 }
